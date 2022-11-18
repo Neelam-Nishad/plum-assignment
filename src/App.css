@@ -46,3 +46,8 @@
   width: 24px;
   margin: 0 12px 0 0;
 }
+
+.back-icon{
+  margin-right: 12px;
+  cursor: pointer;
+}

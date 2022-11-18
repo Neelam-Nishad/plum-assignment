@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./plan.css";
 import Arrow from "../assets/up-arrow.svg";
 
-const Plan = ({ setOuterData, setActiveCta }) => {
+const Plan = ({ setOuterData, setActiveCta, outerData }) => {
   const [showSelectPlan, setShowSelectPlan] = useState(true);
   const [showBasicDetails, setShowBasicDetails] = useState(true);
   const [data, setData] = useState({
@@ -14,6 +14,10 @@ const Plan = ({ setOuterData, setActiveCta }) => {
     pincode: "",
     state: "",
   });
+
+  useEffect(() => {
+    if (outerData.email) setData(outerData);
+  }, []);
 
   useEffect(() => {
     setOuterData(data);

@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import "./review.css";
+import BackIcon from "../assets/back.svg";
 
-const Review = ({ setActiveCta, data }) => {
+const Review = ({ setActiveCta, data, stepsDone, setStepsDone }) => {
   useEffect(() => {
     setActiveCta(true);
   }, []);
 
   return (
     <div className="plan-contianer">
-      <p className="plan-heading">Review and confirm payment</p>
+      <div className="flex" style={{ justifyContent: "flex-start" }}>
+        <img
+          src={BackIcon}
+          className="back-icon"
+          onClick={() => setStepsDone(stepsDone - 1)}
+        />
+        <p className="plan-heading">Review and confirm payment</p>
+      </div>
       <div className="review-container">
         <div className="flex review-section">
           <p className="review-title">Plan selected</p>

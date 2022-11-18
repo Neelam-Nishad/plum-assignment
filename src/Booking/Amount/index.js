@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import "./amount.css";
 import SeekBar from "react-seekbar-component";
 import "react-seekbar-component/dist/index.css";
+import BackIcon from "../assets/back.svg";
 
-const Amount = ({ data, setActiveCta, setAmount }) => {
+const Amount = ({ data, setActiveCta, setAmount, setStepsDone, stepsDone }) => {
   const inputRef = useRef();
   const [selectedAmount, setSelectedAmount] = useState(50);
   const [checked, setChecked] = useState(false);
@@ -18,7 +19,15 @@ const Amount = ({ data, setActiveCta, setAmount }) => {
 
   return (
     <div className="plan-contianer">
-      <p className="plan-heading">Select your deductible amount</p>
+      <div className="flex" style={{ justifyContent: "flex-start" }}>
+        <img
+          src={BackIcon}
+          className="back-icon"
+          onClick={() => setStepsDone(stepsDone - 1)}
+        />
+        <p className="plan-heading">Select your deductible amount</p>
+      </div>
+
       <p className="plan-description">
         Select the deductible amount for the policy (or policies) below. (what
         is a deductible?){" "}

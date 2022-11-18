@@ -6,7 +6,7 @@ import Preview from "./Preview";
 import Declaration from "./Declaration";
 import Review from "./Review";
 
-const Booking = ({ stepsDone, setActiveCta }) => {
+const Booking = ({ stepsDone, setActiveCta, setStepsDone }) => {
   const [data, setData] = useState({});
   const [amount, setAmount] = useState(300000);
   return (
@@ -24,7 +24,11 @@ const Booking = ({ stepsDone, setActiveCta }) => {
       <div className="booking-form-container">
         {stepsDone === 0 && (
           <>
-            <Plan setOuterData={setData} setActiveCta={setActiveCta} />
+            <Plan
+              setOuterData={setData}
+              setActiveCta={setActiveCta}
+              outerData={data}
+            />
             <Preview data={data} />
           </>
         )}
@@ -34,6 +38,8 @@ const Booking = ({ stepsDone, setActiveCta }) => {
               setActiveCta={setActiveCta}
               data={data}
               setAmount={setAmount}
+              setStepsDone={setStepsDone}
+              stepsDone={stepsDone}
             />
             <Preview data={data} />
           </>
@@ -44,6 +50,8 @@ const Booking = ({ stepsDone, setActiveCta }) => {
               setActiveCta={setActiveCta}
               data={data}
               setAmount={setAmount}
+              setStepsDone={setStepsDone}
+              stepsDone={stepsDone}
             />
             <Preview data={data} />
           </>
@@ -54,6 +62,8 @@ const Booking = ({ stepsDone, setActiveCta }) => {
               setActiveCta={setActiveCta}
               data={data}
               setAmount={setAmount}
+              setStepsDone={setStepsDone}
+              stepsDone={stepsDone}
             />
           </>
         )}

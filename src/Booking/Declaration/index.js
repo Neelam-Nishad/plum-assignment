@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./declaration.css";
+import BackIcon from "../assets/back.svg";
 
-const Declaration = ({ setActiveCta }) => {
+const Declaration = ({ setActiveCta, stepsDone, setStepsDone }) => {
   const [data, setData] = useState(declarationData);
   const [check, setCheck] = useState(false);
 
@@ -19,7 +20,14 @@ const Declaration = ({ setActiveCta }) => {
 
   return (
     <div className="plan-contianer">
-      <p className="plan-heading">Declaration</p>
+      <div className="flex" style={{ justifyContent: "flex-start" }}>
+        <img
+          src={BackIcon}
+          className="back-icon"
+          onClick={() => setStepsDone(stepsDone - 1)}
+        />
+        <p className="plan-heading">Declaration</p>
+      </div>
       <div className="declaration-container">
         {data?.map((item, index) => {
           return (
