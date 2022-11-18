@@ -1,0 +1,27 @@
+.progressbar-contianer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.booking-progressbar{
+    width: 24.5%;
+    height: 8px;
+    background-color: #CCC4BA;
+}
+
+.booking-form-container{
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 240px);
+    overflow-y: auto;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 45px;
+}
+
+.booking-form-container::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}

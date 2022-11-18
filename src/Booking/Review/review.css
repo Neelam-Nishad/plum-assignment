@@ -1,0 +1,19 @@
+.review-container{
+    padding: 16px 32px;
+    background-color: #ffffff;
+    width: 120%;
+    margin-top: 40px;
+}
+
+.review-section{
+    justify-content: flex-start;
+    margin-bottom: 0px;
+}
+
+.review-title{
+    font-size:16px;
+    font-weight:400;
+    color: #55657D;
+    margin: 0;
+    width: 30%;
+}

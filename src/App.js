@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Booking from "./Booking";
 
 function App() {
+  const [stepsDone, setStepsDone] = useState(0);
+  const [activeCta, setActiveCta] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="header" />
+      <Booking
+        stepsDone={stepsDone}
+        setStepsDone={setStepsDone}
+        setActiveCta={setActiveCta}
+      />
+      <div className="footer">
+        <div
+          className="next-cta"
+          style={{ opacity: activeCta ? 1 : 0.4 }}
+          onClick={() => activeCta && setStepsDone(stepsDone + 1)}
         >
-          Learn React
-        </a>
-      </header>
+          {stepsDone < 3 ? "Next" : "Submit"}
+        </div>
+      </div>
     </div>
   );
 }

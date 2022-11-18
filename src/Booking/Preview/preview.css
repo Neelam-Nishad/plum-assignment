@@ -1,0 +1,38 @@
+.preview-container{
+    width: 35%;
+    background-color: #ffffff;
+    border-radius:10px;
+    height: fit-content;
+}
+
+.preview-top{
+    border-bottom: 1px solid #E1E5EB;
+    padding: 16px;
+    text-align: center;
+    font-size:24px;
+    letter-spacing:1px;
+    color: #55657D;
+    font-weight: 500;
+}
+
+.preview-bottom{
+    padding: 16px 32px;
+}
+
+.preview-bottom-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview-title{
+    font-size:14px;
+    color: #2D3D54;
+    margin: 5px 0;
+}
+
+.preview-data{
+    font-size: 8px;
+    color: #000000;
+    margin: 0;
+}
